@@ -1,0 +1,20 @@
+services:
+  nginx-proxy-manager:
+    image: jlesage/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    volumes:
+      - /home/jpeyton/portainer/Nginx-Proxy:/config
+    environment:
+      - USER_ID=${PUID:-1000}
+      - GROUP_ID=${PGID:-1000}
+    ports:
+      - 443:4443
+      - 80:8080
+      - 81:8181
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

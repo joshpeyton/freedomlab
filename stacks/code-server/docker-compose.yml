@@ -1,0 +1,17 @@
+services:
+  code-server:
+    image: linuxserver/code-server:latest
+    container_name: code-server
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+    environment:
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
+      - TZ=${TIMEZONE:-America/New_York}
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

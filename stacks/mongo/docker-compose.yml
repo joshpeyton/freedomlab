@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: unless-stopped
+    volumes:
+      - /home/jpeyton/portainer/mongo/data/db:/data/db
+      - /home/jpeyton/portainer/mongo/data/configdb:/data/configdb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

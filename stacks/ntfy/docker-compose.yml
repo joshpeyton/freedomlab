@@ -1,0 +1,19 @@
+services:
+  ntfy:
+    image: binwiederhier/ntfy
+    container_name: ntfy
+    command: serve
+    restart: unless-stopped
+    volumes:
+      - /home/jpeyton/portainer/ntfy/cache:/var/cache/ntfy
+      - /home/jpeyton/portainer/ntfy/config:/etc/ntfy
+    environment:
+      - TZ=${TIMEZONE:-America/New_York}
+    ports:
+      - 8909:80
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
