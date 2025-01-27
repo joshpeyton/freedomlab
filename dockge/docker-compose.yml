@@ -2,18 +2,23 @@ services:
   dockge:
     image: louislam/dockge:latest
     container_name: dockge
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/jpeyton/dockge/data:/app/data
+      - ./data:/app/data
       # Stacks Directory
-      - /home/jpeyton/stacks:/home/jpeyton/stacks
+      - ~/freedomlab/stacks:/home/jpeyton/stacks
     environment:
       # Tell Dockge where to find the stacks
       - DOCKGE_STACKS_DIR=/home/jpeyton/stacks
+    ports:
+      - 8920:5001
     networks:
-      - proxy
+      - admin
 
 networks:
-  proxy:
+  admin:
     external: true
+    name: ${NETWORK_ADMIN}

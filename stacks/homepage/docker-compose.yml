@@ -2,12 +2,14 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
-      - /home/jpeyton/portainer/Homepage/config:/app/config # Make sure your local config directory exists
-      - /home/jpeyton/portainer/Homepage/config/icons:/app/public/icons
-      - /media/jpeyton/HubStorage:/media/HubStorage # Volume for additional drive
+      - ./config:/app/config # Make sure your local config directory exists
+      - ./config/icons:/app/public/icons
       - /media/jpeyton/Storage:/media/Storage # Volume for additional drive
+      - /media/jpeyton/HubStorage:/media/HubStorage # Volume for additional drive
     environment:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
@@ -19,3 +21,4 @@ services:
 networks:
   proxy:
     external: true
+    name: ${NETWORK_PROXY}

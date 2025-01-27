@@ -2,16 +2,21 @@ services:
   code-server:
     image: linuxserver/code-server:latest
     container_name: code-server
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
-      - ./config:/config
+      - ./data:/config
     environment:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
       - TZ=${TIMEZONE:-America/New_York}
+    ports:
+      - 8904:8443
     networks:
       - proxy
 
 networks:
   proxy:
     external: true
+    name: ${NETWORK_PROXY}

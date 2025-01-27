@@ -1,6 +1,6 @@
 {
-	"recommendations": [
-		"EditorConfig.EditorConfig",
+    "recommendations": [
+        "EditorConfig.EditorConfig",
         "ms-azuretools.vscode-docker"
-	]
+    ]
 }

@@ -2,6 +2,8 @@ services:
   docker-proxy:
     image: ghcr.io/tecnativa/docker-socket-proxy:latest
     container_name: docker-proxy
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Mounted as read-only
@@ -11,8 +13,9 @@ services:
     # ports:
     #   - 127.0.0.1:2375:2375
     networks:
-      - proxy
+      - admin
 
 networks:
-  proxy:
+  admin:
     external: true
+    name: ${NETWORK_ADMIN}

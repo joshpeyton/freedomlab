@@ -2,10 +2,12 @@ services:
   mongo:
     image: mongo:7
     container_name: mongo
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
-      - /home/jpeyton/portainer/mongo/data/db:/data/db
-      - /home/jpeyton/portainer/mongo/data/configdb:/data/configdb
+      - ./data/db:/data/db
+      - ./data/configdb:/data/configdb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -17,3 +19,4 @@ services:
 networks:
   proxy:
     external: true
+    name: ${NETWORK_PROXY}

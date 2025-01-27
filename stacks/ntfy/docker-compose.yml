@@ -1,14 +1,22 @@
 services:
   ntfy:
-    image: binwiederhier/ntfy
+    image: binwiederhier/ntfy:latest
     container_name: ntfy
+    user: ${PUID:-1000}:${PGID:-1000}
+    security_opt:
+      - no-new-privileges
     command: serve
     restart: unless-stopped
     volumes:
-      - /home/jpeyton/portainer/ntfy/cache:/var/cache/ntfy
-      - /home/jpeyton/portainer/ntfy/config:/etc/ntfy
+      - ./data:/var/lib/ntfy
     environment:
-      - TZ=${TIMEZONE:-America/New_York}
+      TZ: ${TIMEZONE:-America/New_York}
+      NTFY_BASE_URL: http://ntfy.example.com
+      NTFY_CACHE_FILE: /var/lib/ntfy/cache.db
+      NTFY_AUTH_FILE: /var/lib/ntfy/auth.db
+      NTFY_BEHIND_PROXY: true
+      NTFY_ATTACHMENT_CACHE_DIR: /var/lib/ntfy/attachments
+      NTFY_UPSTREAM_BASE_URL: https://ntfy.sh
     ports:
       - 8909:80
     networks:
@@ -17,3 +25,4 @@ services:
 networks:
   proxy:
     external: true
+    name: ${NETWORK_PROXY}

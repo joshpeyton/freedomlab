@@ -1,11 +1,13 @@
 services:
   homer:
-    image: b4bz/homer
+    image: b4bz/homer:latest
     container_name: homer
+    user: ${PUID:-1000}:${PGID:-1000}
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
-      - /home/jpeyton/portainer/Homer/assets:/www/assets # Make sure your local config directory exists
-      - /home/jpeyton/portainer/Homer:/www/config.yml
+      - ./config:/www/assets # Make sure your local config directory exists
     environment:
       - INIT_ASSETS=1 # default, requires the config directory to be writable for the container user (see user option)
       - UID=${PUID:-1000}
@@ -18,3 +20,4 @@ services:
 networks:
   proxy:
     external: true
+    name: ${NETWORK_PROXY}

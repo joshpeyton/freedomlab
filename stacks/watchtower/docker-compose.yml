@@ -2,6 +2,8 @@ services:
   watchtower:
     image: containrrr/watchtower:latest
     container_name: watchtower
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -10,10 +12,11 @@ services:
       - WATCHTOWER_SCHEDULE=0 0 0 * * 1
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_NOTIFICATION_REPORT=true
-      - WATCHTOWER_NOTIFICATION_URL=discord://PFmkkoj7KO2xDfYrjVSWJPFlRInmCUT3ItQKsE-EZjKrdBfpWnbmFKJI2PwJQApgtXk1@1156746023268532234?Username=Watchtower
+      - WATCHTOWER_NOTIFICATION_URL=${WATCHTOWER_DISCORD}
     networks:
-      - proxy
+      - admin
 
 networks:
-  proxy:
+  admin:
     external: true
+    name: ${NETWORK_ADMIN}

@@ -3,14 +3,16 @@ services:
   filebrowser:
     image: filebrowser/filebrowser:s6
     container_name: filebrowser
+    security_opt:
+      - no-new-privileges
     restart: unless-stopped
     volumes:
-      - /home/jpeyton/portainer:/srv/Files #Change to match your directory
-      - /media/jpeyton/HubStorage:/srv/HubStorage
-      - /media/jpeyton/Storage:/srv/Storage
-      - /home/jpeyton/portainer/FileBrowser/filebrowser.db:/database/filebrowser.db #Change to match your directory
-      - /home/jpeyton/portainer/FileBrowser/settings.json:/config/settings.json #Change to match your directory
-      - /home/jpeyton/portainer/FileBrowser/healthcheck.sh:/healthcheck.sh
+      - ~/freedomlab:/srv/Files # Expose docker stack files
+      - /media/jpeyton/Storage:/srv/Storage # Volume for additional drive
+      - /media/jpeyton/HubStorage:/srv/HubStorage # Volume for additional drive
+      - ./config/settings.json:/config/settings.json # Filebrowser settings
+      - ./config/healthcheck.sh:/healthcheck.sh
+      - ./data/filebrowser.db:/database/filebrowser.db # DB for storage
     environment:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
@@ -22,3 +24,4 @@ services:
 networks:
   proxy:
     external: true
+    name: ${NETWORK_PROXY}
