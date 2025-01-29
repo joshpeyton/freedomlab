@@ -6,7 +6,7 @@ services:
       - no-new-privileges
     restart: unless-stopped
     volumes:
-      - ./data:/config
+      - .~/freedomlab/data/nginx-proxy-manager:/config
     environment:
       - USER_ID=${PUID:-1000}
       - GROUP_ID=${PGID:-1000}

@@ -1,0 +1,152 @@
+---
+title: "Freedom Lab"
+subtitle: "Right to break free"
+logo: "assets/freedom-lab-logo.png"
+
+header: false
+footer: '<p>Theme made with <span class="has-text-danger">❤️</span> by <a href="#">Josh</a></p>' # Set false if you want to hide it.
+
+stylesheet:
+  - "assets/custom.css"
+
+columns: "4" # You can change this to any number that is a factor of 12: (1, 2, 3, 4, 6, 12)
+theme: default
+colors:
+  light:
+    highlight-primary: "#fff5f2"
+    highlight-secondary: "#fff5f2"
+    highlight-hover: "#bebebe"
+    background: "#12152B"
+    card-background: "rgba(255, 245, 242, 0.8)"
+    text: "#ffffff"
+    text-header: "#fafafa"
+    text-title: "#000000"
+    text-subtitle: "#111111"
+    card-shadow: rgba(0, 0, 0, 0.5)
+    link: "#3273dc"
+    link-hover: "#2e4053"
+    background-image: "../assets/wallpaper-light.jpeg" # Change wallpaper.jpeg to the name of your own custom wallpaper!
+  dark:
+    highlight-primary: "#181C3A"
+    highlight-secondary: "#181C3A"
+    highlight-hover: "#1F2347"
+    background: "#12152B"
+    card-background: "rgba(24, 28, 58, 0.8)"
+    text: "#eaeaea"
+    text-header: "#7C71DD"
+    text-title: "#fafafa"
+    text-subtitle: "#8B8D9C"
+    card-shadow: rgba(0, 0, 0, 0.5)
+    link: "#c1c1c1"
+    link-hover: "#fafafa"
+    background-image: "../assets/wallpaper.jpeg"
+
+services:
+  - name: "//Tools"
+    icon: "fa-solid fa-screwdriver-wrench"
+    items:
+      - name: "VS Code"
+        logo: "assets/tools/code.png" # Change github.png to the name of your own custom icon!
+        subtitle: "Remote VS Code"
+        tag: "code editor"
+        tagstyle: "is-primary" # This will display the is-primary color! Try changing it to; is-link, is-info, is-success, is-warning or is-danger!
+        url: "https://code.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+        method: "get"
+      - name: "Mongo Express"
+        logo: "assets/tools/mongodb.png" # Change github.png to the name of your own custom icon!
+        subtitle: "Mongo Editor"
+        tag: "mongo editor"
+        tagstyle: "is-primary" # This will display the is-primary color! Try changing it to; is-link, is-info, is-success, is-warning or is-danger!
+        url: "https://mongo.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+      - name: "Shell In A Box"
+        logo: "assets/tools/shell-tips-light.png" # Change github.png to the name of your own custom icon!
+        subtitle: "SSH Shell"
+        tag: "ssh shell"
+        tagstyle: "is-primary" # This will display the is-primary color! Try changing it to; is-link, is-info, is-success, is-warning or is-danger!
+        url: "https://shell.freedomlab.xyz/"
+        target: "_blank"
+      - name: "File Browser"
+        logo: "assets/tools/filebrowser.png" # Change github.png to the name of your own custom icon!
+        subtitle: "Files"
+        tag: "file browser"
+        tagstyle: "is-primary" # This will display the is-primary color! Try changing it to; is-link, is-info, is-success, is-warning or is-danger!
+        url: "https://files.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+        method: "get"
+
+  - name: "//Server"
+    icon: "fa-solid fa-server"
+    items:
+      - name: "Portainer"
+        logo: "assets/tools/portainer.png"
+        subtitle: "Manage Containers"
+        tag: "docker"
+        tagstyle: "is-info"
+        url: "https://portainer.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+      - name: "Nginx Proxy Manager"
+        logo: "assets/tools/nginx-proxy-manager.png"
+        subtitle: "Reverse Proxy"
+        tag: "reverse proxy"
+        tagstyle: "is-info"
+        url: "https://proxy.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+      - name: "Pi-Hole"
+        logo: "assets/tools/pi-hole.png"
+        subtitle: "Ad Blocker"
+        tag: "ad blocker"
+        tagstyle: "is-info"
+        url: "https://pihole.freedomlab.xyz/admin"
+        target: "_blank"
+        type: Ping
+      - name: "Uptime Kuma"
+        logo: "assets/tools/uptime-kuma.png"
+        subtitle: "Uptime Kuma"
+        tag: "Up/Down"
+        tagstyle: "is-info"
+        url: "https://uptime.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+
+  - name: "//Media"
+    icon: "fa-solid fa-clapperboard"
+    items:
+      - name: "Plex"
+        logo: "assets/tools/plex.png"
+        subtitle: "Media Server"
+        tag: "plex"
+        tagstyle: "is-info"
+        url: "https://portainer.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+      - name: "Radarr"
+        logo: "assets/tools/radarr-light.png"
+        subtitle: "Movies"
+        tag: "radarr"
+        tagstyle: "is-info"
+        url: "https://portainer.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+      - name: "Sonarr"
+        logo: "assets/tools/sonarr.png"
+        subtitle: "TV Shows"
+        tag: "sonarr"
+        tagstyle: "is-info"
+        url: "https://portainer.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping
+      - name: "NZBget"
+        logo: "assets/tools/nzbget.png"
+        subtitle: "Usenet Downloader"
+        tag: "nzbget"
+        tagstyle: "is-info"
+        url: "https://portainer.freedomlab.xyz/"
+        target: "_blank"
+        type: Ping

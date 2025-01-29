@@ -6,7 +6,7 @@ services:
       - no-new-privileges
     restart: unless-stopped
     volumes:
-      - ./data:/app/data
+      - ~/freedomlab/data/uptime-kuma:/app/data
     ports:
       - 8907:3001
     networks:

@@ -8,7 +8,7 @@ services:
     command: serve
     restart: unless-stopped
     volumes:
-      - ./data:/var/lib/ntfy
+      - ~/freedomlab/data/ntfy:/var/lib/ntfy
     environment:
       TZ: ${TIMEZONE:-America/New_York}
       NTFY_BASE_URL: http://ntfy.example.com

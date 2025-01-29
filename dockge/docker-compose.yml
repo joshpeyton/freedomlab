@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./data:/app/data
+      - ~/freedomlab/data/dockge:/app/data
       # Stacks Directory
       - ~/freedomlab/stacks:/home/jpeyton/stacks
     environment:

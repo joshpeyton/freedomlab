@@ -1,0 +1,34 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+
+- logo:
+    icon: /icons/freedom-lab-logo.png
+
+- resources:
+    label: System
+    cpu: true
+    memory: true
+    disk: /
+    refresh: 3600000
+
+- resources:
+    label: Storage
+    disk:
+      - /media/Storage
+    refresh: 3600000
+
+- resources:
+    label: HubStorage
+    disk:
+      - /media/HubStorage
+    refresh: 3600000
+
+# - search:
+#     provider: google
+#     target: _blank
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short

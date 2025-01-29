@@ -6,8 +6,8 @@ services:
       - no-new-privileges
     restart: unless-stopped
     volumes:
-      - ./data/db:/data/db
-      - ./data/configdb:/data/configdb
+      - ~/freedomlab/data/mongo/db:/data/db
+      - ~/freedomlab/data/mongo/configdb:/data/configdb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example

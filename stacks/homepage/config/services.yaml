@@ -1,0 +1,98 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Media:
+    - Plex:
+        icon: plex.png
+        href: https://proxy.freedomlab.xyz
+        description: Media Server
+        # siteMonitor: http://192.168.86.38:81
+    - Radarr:
+        icon: radarr.png
+        href: https://proxy.freedomlab.xyz
+        description: Movies
+        # siteMonitor: http://192.168.86.38:81
+    - Sonarr:
+        icon: sonarr.png
+        href: https://proxy.freedomlab.xyz
+        description: TV Shows
+        # siteMonitor: http://192.168.86.38:81
+    - NZBGet:
+        icon: nzbget.png
+        href: https://proxy.freedomlab.xyz
+        description: Usenet Downloader
+        # siteMonitor: http://192.168.86.38:81
+
+- Server:
+    - Portainer:
+        icon: portainer.png
+        href: https://containers.freedomlab.xyz
+        description: Manage Containers
+        # ping: https://192.168.86.38:9443
+        siteMonitor: https://192.168.86.38:9443
+        widget:
+            type: portainer
+            url: https://192.168.86.38:9443
+            env: 1
+            key: ptr_XBKdwh0odE+yzSxr2AZa0EFvbhg7upl79mOyuns41zU=
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.png
+        href: https://proxy.freedomlab.xyz
+        description: Reverse proxy and SSL
+        siteMonitor: http://192.168.86.38:81
+    - Pi Hole:
+        icon: pi-hole.png
+        href: https://pihole.freedomlab.xyz/admin
+        description: Pihole Adblocker
+        siteMonitor: http://192.168.86.38:1010
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: https://uptime.freedomlab.xyz
+        description: Monitor
+        siteMonitor: http://192.168.86.38:8907
+
+- Tools:
+    - VS Code:
+        icon: vscode.png
+        href: https://code.freedomlab.xyz
+        description: Remote VS Code
+        siteMonitor: http://192.168.86.38:8906
+    - Mongo Express:
+        icon: mongodb.png
+        href: https://mongo.freedomlab.xyz
+        description: Mongo Editor
+        siteMonitor: http://192.168.86.38:8905
+    - File Browser:
+        icon: filebrowser.png
+        href: https://files.freedomlab.xyz
+        description: Files
+        siteMonitor: http://192.168.86.38:8908
+    - NTFY:
+        icon: ntfy.png
+        href: https://ntfy.freedomlab.xyz
+        description: NTFY notifications
+        siteMonitor: http://192.168.86.38:8909
+    - Shell In A Box:
+        icon: shell-tips-light.png
+        href: https://shell.freedomlab.xyz
+        description: SSH Shell
+        # siteMonitor: http://192.168.86.38:4200
+
+# - Top Services:
+#     - Proxmox:
+#         icon: proxmox.png # icons found here https://github.com/walkxcode/dashboard-icons
+#         href: https://192.168.0.15:8006
+#         description: Proxmox VE
+#     - PiHole:
+#         icon: pi-hole.svg # icons found here https://github.com/walkxcode/dashboard-icons
+#         href: http://192.168.60.10/admin
+#         description: Server 1
+#     - Cowboy:
+#         icon: mdi-account-cowboy-hat-#FF0000 # icons found here https://pictogrammers.com/library/mdi/
+#         href: https://localhost/
+#         description: giddyup service
+#     - McDonald’s:
+#         icon: si-mcdonalds-#FFD700 # icons found here https://simpleicons.org/
+#         href: https://www.mcdonalds.com/
+#         description: homepage

@@ -12,7 +12,7 @@ services:
       - /media/jpeyton/HubStorage:/srv/HubStorage # Volume for additional drive
       - ./config/settings.json:/config/settings.json # Filebrowser settings
       - ./config/healthcheck.sh:/healthcheck.sh
-      - ./data/filebrowser.db:/database/filebrowser.db # DB for storage
+      - ~/freedomlab/data/filebrowser/filebrowser.db:/database/filebrowser.db # DB for storage
     environment:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
