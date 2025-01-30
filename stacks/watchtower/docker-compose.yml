@@ -8,6 +8,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
       - TZ=${TIMEZONE:-America/New_York}
       - WATCHTOWER_SCHEDULE=0 0 0 * * 1
       - WATCHTOWER_CLEANUP=true

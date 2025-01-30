@@ -2,6 +2,7 @@ services:
   mongo:
     image: mongo:7
     container_name: mongo
+    user: ${PUID:-1000}:${PGID:-1000}
     security_opt:
       - no-new-privileges
     restart: unless-stopped
@@ -9,7 +10,7 @@ services:
       - ~/freedomlab/data/mongo/db:/data/db
       - ~/freedomlab/data/mongo/configdb:/data/configdb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_USERNAME: jpeyton
       MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - 27017:27017
